@@ -2,6 +2,7 @@ IO Energy Billing Engine
 =====
 
 An API using flask structure that can automatically convert customer energy usage data in xml/csv data type to an completed customer invoice online. 
+![](https://github.com/jiantaos/IO-energy-Billing-engine/blob/main/flask_ioenergy/images/showcase.png)
 
 
 Installing
