@@ -5,6 +5,10 @@ An API using flask structure that can automatically convert customer energy usag
 ![](https://github.com/jiantaos/IO-energy-Billing-engine/blob/main/flask_ioenergy/images/showcase.png)
 
 
+Prerequisites
+----------
+an constrcuted MYSQL server
+
 Installing
 ----------
 
@@ -18,12 +22,45 @@ Install and update using `pip`_:
 
     $ flask run
       * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+      
+File Stucture
+----------
+<pre>
+|-- apps
+|	|-- 
+|	|-- ... (more to add)
+|-- static
+|	|-- base
+|	|	|-- css 			# CSS files containing all basic and bootstrap based files
+|	|	|-- js      			# JS files containing all basic and bootstrap based files
+|	|--index
+|	|	|-- css				# CSS files for homepage
+|	|	|-- js 				# js files for homepage
+|	|	|-- img  			# images for homepage
+|	|-- ... (more to add)
+|-- templates
+|	|-- index 				# all index html files
+|	|-- base.html 				# the main base html files
+|	|-- ... (more to add)
+|--  
+</pre>
 
 
-Contributing
+Language and Tools
 ------------
 
-For guidance on setting up a development environment and how to make a
-contribution to Flask, see the `contributing guidelines`_.
+<pre>
+VERSION CONTROL:  Git, Github
+BACK       END:   python,MYSQL
+FRONT      END:   CSS, HTML, Javascript, bootstrap
+</pre>
 
-.. _contributing guidelines: https://github.com/pallets/flask/blob/main/CONTRIBUTING.rst
+
+MYSQL Server
+<pre>
+Host:localhost
+Database:ioenergy
+user:iodb
+password:123456
+</pre>
+
