@@ -64,6 +64,10 @@ user:iodb
 password:123456
 </pre>
 
+Reminds
+----------
+xml_mysql.py is a independent file from the flask app which can be complied seperately to insert xml into mysql database 
+
 Contributing
 ----------
 
