@@ -1,6 +1,5 @@
-import sqlite3
+
 import pandas as pd
-import psycopg2
 import mysql.connector as msql
 from mysql.connector import Error
 
@@ -69,6 +68,7 @@ def grid_energy_charges():
         conn = msql.connect(host='localhost', database='ioenergy', user='iodb', password='123456')
         
         cursor = conn.cursor()
+        
         # MYSQL query according to the price plan
         cursor.execute("SELECT import FROM customer_data WHERE hour(time) < 7 or hour(time) >= 21 union all SELECT import FROM customer_data WHERE weekday(time) > 4 and hour (time) >= 7 and hour(time) < 21;")
         results = cursor.fetchall()
@@ -105,7 +105,7 @@ def rooftop_energy_charges():
       
         cursor = conn.cursor()
 
-        cursor.execute("Select self_consumption from customer_data;")
+        cursor.execute("SELECT value FROM energy_table where (type = 'SelfConsumption');")
         results = cursor.fetchall()
         self_consum_usage = sum(e[0] for e in results)
 

@@ -86,20 +86,21 @@ def bill_generate(year_being_billed,month_being_billed,generate_bill_for):
     this_bill_issue_date = now.strftime("%Y-%m-%d")
     print(this_bill_issue_date)
     
-    date = datetime.date(year_being_billed,month_being_billed,1)
+    
     # bill_cycle_end_date is the last date of the month that is billed for 
-    bill_cycle_end_date = date.replace(day = calendar.monthrange(date.year,date.month)[1])
-    print(bill_cycle_end_date)
+    #bill_cycle_end_date = datetime.date(year_being_billed,month_being_billed,calendar.monthrange(year_being_billed,month_being_billed)[1])
+    bill_cycle_end_date = datetime.date(year_being_billed,month_being_billed,calendar.monthrange(year_being_billed,month_being_billed)[1])
+   
     # bill_cycle_start_date is the first date of the month that is billed for
-    bill_cycle_start_date = date.replace(day=1)
-    print(bill_cycle_start_date)
+    bill_cycle_start_date = datetime.date(year_being_billed,month_being_billed,1)
+    
     # billing_days is the period between start day and end day
     billing_days = (bill_cycle_end_date-bill_cycle_start_date).days + 1
-    print(billing_days)
+   
     # pay day is 14 days after the issue date
     pay_date = now + datetime.timedelta(days=14)
     pay_bill_date = pay_date.strftime("%Y-%m-%d")
-    print(pay_bill_date)
+    
 
     return this_bill_issue_date,bill_cycle_end_date,bill_cycle_start_date,billing_days,pay_bill_date,invoice_number
 
